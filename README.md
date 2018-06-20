@@ -1,10 +1,13 @@
 # LIFE CYCLE ACTIVITY [![Build Status](https://travis-ci.org/nomensa/jquery.hide-show.svg)](https://travis-ci.org/nomensa/jquery.hide-show.svg?branch=master)
-
-   ```MVP => Model/Presenter/View.```
   
-## Understand `Observable`
+## Understand `Quick App Switcher on your device`
+1. Click on symbol of your device. It's look like this:
+![alt text](https://github.com/danisluis6/Life-Cycle-Activity/blob/master/img/1.gif)
 
-``Presenter get data and use view to connect data and ui.``
+2. Go to the application and perform with this manipulation.
+![alt text](https://github.com/danisluis6/Life-Cycle-Activity/blob/master/img/1.gif)
+
+
 
 ## We understand about Abstract class here.
 
@@ -149,7 +152,7 @@ public class ObserverPatternDemo {
 ```
 ## We research about "Iterator Design Pattern in Java"
 ``Java developers have to be familiar with the Iterator interface:``
-![alt text](https://github.com/danisluis6/RxJava-Introduction/blob/level_research_reactive/Deeply/2.png)
+
 ```java
 import java.util.ArrayList;
 import java.util.Iterator;
