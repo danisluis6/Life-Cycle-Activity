@@ -8,8 +8,11 @@
 ![alt text](https://github.com/danisluis6/Life-Cycle-Activity/blob/master/img/1.gif)
 
 <img src = "https://github.com/danisluis6/RxJava-Introduction/blob/level_research_reactive/Deeply/x.png" width="75px" height="40px"/>Don't call <b>onCreate()</b> and <b>onDestroyView()</b>
-1. Solution here
 
+1. Solution here
 - Using method <b>onSaveInstanceState</b> to save 
 Example: 1
-
+- Assume when touch switcher. Data will be lost and we need to get data again. By the way, the method onPause will be called.
+=> We will remove data on this method.
+Follow it.
+![alt text](https://github.com/danisluis6/Life-Cycle-Activity/blob/master/img/3.gif)
