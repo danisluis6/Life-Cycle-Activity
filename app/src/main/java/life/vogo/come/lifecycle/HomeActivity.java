@@ -54,6 +54,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
     @Override
     protected void onPause() {
         super.onPause();
+        tvWrapper.setText("");
     }
 
     @Override
