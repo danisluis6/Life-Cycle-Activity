@@ -46,5 +46,6 @@ public class HomeActivity extends BaseActivity implements HomeView {
     }
 }
 ```
-![alt text](https://github.com/danisluis6/Life-Cycle-Activity/blob/fill_ram/img/1.gif)
-<img src = "https://github.com/danisluis6/Life-Cycle-Activity/blob/fill_ram/img/1.gif" width="360px" height="640px"/>
+<p align="center">
+  <img src = "https://github.com/danisluis6/Life-Cycle-Activity/blob/fill_ram/img/1.gif" width="360px" height="640px"/>
+</p>
