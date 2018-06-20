@@ -2,7 +2,6 @@ package life.vogo.come.lifecycle;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import javax.inject.Inject;
@@ -49,28 +48,5 @@ public class HomeActivity extends BaseActivity implements HomeView {
             x = savedInstanceState.getString(TAG);
         }
         tvWrapper.setText(x);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i("TAG", "onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i("TAG", "onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i("TAG", "onDestroy");
     }
 }
