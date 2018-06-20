@@ -169,3 +169,12 @@ public class HomeActivity extends BaseActivity implements HomeView {
     }
 }
 ```
+
+```java
+@Override
+protected void onPause() {
+    super.onPause();
+    tvWrapper.setText("");
+    backupString += backupString;
+}
+```
