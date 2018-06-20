@@ -26,5 +26,4 @@ class HomeModule {
     HomePresenter provideHomePresenter(Context context, HomeActivity homeActivity) {
         return new HomePresenterImpl(context, homeActivity);
     }
-
 }

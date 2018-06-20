@@ -9,6 +9,7 @@
         android:layout_height="96dp" />
     <TextView
         android:id="@+id/tvWrapper"
+        android:typeface="monospace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

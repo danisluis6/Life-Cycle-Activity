@@ -24,17 +24,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         setContentView(getLayoutRes());
         mUnbinder = ButterKnife.bind(this);
         ButterKnife.bind(this);
-        initAttributes();
-        initViews();
     }
 
     public abstract void distributedDaggerComponents();
 
     protected abstract int getLayoutRes();
-
-    protected abstract void initAttributes();
-
-    protected abstract void initViews();
 
     @Override
     protected void onDestroy() {

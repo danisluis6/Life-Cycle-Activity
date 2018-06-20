@@ -2,6 +2,7 @@ package life.vogo.come.lifecycle;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import javax.inject.Inject;
@@ -19,7 +20,8 @@ public class HomeActivity extends BaseActivity implements HomeView {
     @Inject
     HomePresenter mPresenter;
 
-    private int backupResume = 0;
+    private String TAG = HomeActivity.class.getSimpleName();
+    private String x;
 
     @Override
     public void distributedDaggerComponents() {
@@ -30,20 +32,23 @@ public class HomeActivity extends BaseActivity implements HomeView {
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(TAG, "Lorence NGUYEN");
+    }
+
+    @Override
     protected int getLayoutRes() {
         return R.layout.activity_home;
     }
 
     @Override
-    protected void initAttributes() {
-        mPresenter.bindView(this);
-        tvWrapper.setText(getString(R.string.app_name).toString() +Constant.SPACE + backupResume);
-        backupResume++;
-    }
-
-    @Override
-    protected void initViews() {
-
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            x = savedInstanceState.getString(TAG);
+        }
+        tvWrapper.setText(x);
     }
 
     @Override
@@ -54,21 +59,18 @@ public class HomeActivity extends BaseActivity implements HomeView {
     @Override
     protected void onPause() {
         super.onPause();
-        tvWrapper.setText("");
+        Log.i("TAG", "onPause");
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onStop() {
+        super.onStop();
+        Log.i("TAG", "onStop");
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("TAG", "onDestroy");
     }
 }
