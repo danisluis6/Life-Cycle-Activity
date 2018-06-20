@@ -1,15 +1,17 @@
 package life.vogo.come.lifecycle;
 
 
+import android.content.Context;
+
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class HomeModule {
+class HomeModule {
 
     private HomeActivity mHomeActivity;
 
-    public HomeModule(HomeActivity homeActivity) {
+    HomeModule(HomeActivity homeActivity) {
         this.mHomeActivity = homeActivity;
     }
 
@@ -18,4 +20,11 @@ public class HomeModule {
     HomeActivity provideHomeActivity() {
         return mHomeActivity;
     }
+
+    @Provides
+    @ActivityScope
+    HomePresenter provideHomePresenter(Context context, HomeActivity homeActivity) {
+        return new HomePresenterImpl(context, homeActivity);
+    }
+
 }
