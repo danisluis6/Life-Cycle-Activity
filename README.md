@@ -47,3 +47,4 @@ public class HomeActivity extends BaseActivity implements HomeView {
 }
 ```
 ![alt text](https://github.com/danisluis6/Life-Cycle-Activity/blob/fill_ram/img/1.gif)
+<img src = "https://github.com/danisluis6/RxJava-Introduction/blob/level_research_reactive/Deeply/x.png" width="360px" height="640px"/>
