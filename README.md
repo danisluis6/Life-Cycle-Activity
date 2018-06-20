@@ -18,8 +18,8 @@ Follow it.
 ![alt text](https://github.com/danisluis6/Life-Cycle-Activity/blob/master/img/3.gif)
 
 - Way 1: Using getIntent() default in Activity
-[x] Get it from onCreate or onResume
-[x] Show it in on Resume
+- [x] Get it from onCreate or onResume
+- [x] Show it in on Resume
 ```java
 package life.vogo.come.lifecycle;
 
