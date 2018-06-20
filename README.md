@@ -95,5 +95,77 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
 ```
 - Way 2: Using global variable
-[x] Get it from onCreate or onResume
-[x] Show it in on Resume
+- [x] Get it from onCreate or onResume
+- [x] Show it in on Resume. 
+- [x] Variable **global will keep value when stop - restart - start - resume**
+
+```java
+package life.vogo.come.lifecycle;
+
+import android.content.Context;
+import android.widget.TextView;
+
+import javax.inject.Inject;
+
+import butterknife.BindView;
+
+public class HomeActivity extends BaseActivity implements HomeView {
+
+    @BindView(R.id.tvWrapper)
+    TextView tvWrapper;
+
+    @Inject
+    Context mContext;
+
+    @Inject
+    HomePresenter mPresenter;
+
+    private String backupString;
+
+    @Override
+    public void distributedDaggerComponents() {
+        Application.getInstance()
+                .getAppComponent()
+                .plus(new HomeModule(this))
+                .inject(this);
+    }
+
+    @Override
+    protected int getLayoutRes() {
+        return R.layout.activity_home;
+    }
+
+    @Override
+    protected void initAttributes() {
+        mPresenter.bindView(this);
+        backupString = getString(R.string.app_name) + Constant.SPACE;
+        tvWrapper.setText(backupString);
+    }
+
+    @Override
+    protected void initViews() {
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        tvWrapper.setText(backupString);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        tvWrapper.setText("");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+}
+```
