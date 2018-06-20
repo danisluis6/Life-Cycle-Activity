@@ -43,11 +43,6 @@ public class HomeActivity extends BaseActivity implements HomeView {
     HomePresenter mPresenter;
 
     @Override
-    protected void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-    }
-
-    @Override
     public void distributedDaggerComponents() {
         Application.getInstance()
                 .getAppComponent()
